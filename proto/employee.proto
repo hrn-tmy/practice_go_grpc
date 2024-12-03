@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package employee;
+
+import "proto/date.proto";
+
+message Employee {
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+    // 列挙型
+    Occupation occupation = 4;
+    // 配列のように複数の要素を含めることができる
+    repeated string phone = 5;
+    // 連想配列のようにキーバリュー型で要素を含めることができる
+    // map<keyの型, valueの型>というふうに書く
+    // メッセージのネストによりvalueの部分をドットチェーンで繋げる必要がある
+    map<string, Company.Project> project = 6;
+    // 複数の型のどれか一つを値としてもつフィールドを定義する際に使用する
+    oneof profile {
+        string text = 7;
+        Video cideo = 8;
+    }
+    // インポートしたDateメッセージを型のように使用することができる
+    // namespaceで名前衝突を防ぐことができるが、その際は「package名.message名」と記載する必要がある
+    date.Date birthday = 9;
+}
+
+enum Occupation {
+    OCCUPATION_UNKNOWN = 0;
+    ENGINEER = 1;
+    DESIHNER = 2;
+    MANAGER = 3;
+}
+
+message Company {
+    message Project {}
+}
+message Video {}
