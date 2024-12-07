@@ -42,7 +42,7 @@ func (*server) ListFiles(context.Context, *pb.ListFilesRequest) (*pb.ListFilesRe
 func (*server) Download(req *pb.DownloadRequest, stream pb.FileService_DownloadServer) error {
 	fmt.Println("Download was invoked")
 	filename := req.GetFilemane()
-	path := "/Users/tomoya/Downloads/CreatedApp/go-grpc/storage" + filename
+	path := "/Users/tomoya/Downloads/CreatedApp/go-grpc/storage/" + filename
 
 	file, err := os.Open(path)
 	if err != nil {
