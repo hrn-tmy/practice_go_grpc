@@ -60,7 +60,7 @@ func main() {
 
 	// JSON形式からデシリアライズ
 	jsomReadEmployee := &pb.Employee{}
-	if err := protojson.Unmarshal(out,jsomReadEmployee); err != nil {
+	if err := protojson.Unmarshal(out, jsomReadEmployee); err != nil {
 		log.Println("Can't unmarshal from json", err)
 	}
 	fmt.Println(jsomReadEmployee)
