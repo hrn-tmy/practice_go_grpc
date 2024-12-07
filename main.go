@@ -66,6 +66,7 @@ func main() {
 	fmt.Println(jsomReadEmployee)
 
 	// jsonpbは旧式の書き方なので、protojsonを使うようにする
+	// 以下、jsonpbを使った場合の記述
 	// m := jsonpb.Marshaler{}
 	// out, err := m.MarshalToString(employee)
 	// if err != nil {
