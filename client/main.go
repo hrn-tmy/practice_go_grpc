@@ -24,9 +24,9 @@ func main() {
 
 	client := pb.NewFileServiceClient(conn)
 	callListFiles(client)
-	callDownload(client)
-	callUpload(client)
-	calluploadAndNotifyProgress(client)
+	// callDownload(client)
+	// callUpload(client)
+	// calluploadAndNotifyProgress(client)
 }
 
 func callListFiles(client pb.FileServiceClient) {
